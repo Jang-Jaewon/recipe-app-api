@@ -3,8 +3,6 @@ name: Checks
 
 on: [push]
 
-env:
-  SECRET_KEY: ${{ secrets.SECRET_KEY }}
 
 jobs:
   test-lint:
@@ -18,6 +16,14 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Create .env file
+        shell: bash
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        run: |
+          touch .env
+          echo SECRET_KEY="$SECRET_KEY" >> .env
+          cat .env
       - name: Test
         run: docker-compose run --rm app sh -c "python manage.py test"
       - name: Lint

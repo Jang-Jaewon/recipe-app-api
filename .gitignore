@@ -378,3 +378,4 @@ zsdoc/data
 
 # secrets.json
 /app/secrets.json
+/app/.env
