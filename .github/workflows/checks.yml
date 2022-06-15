@@ -21,9 +21,10 @@ jobs:
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
         run: |
-          touch my_settings.py
-          echo SECRET_KEY="$SECRET_KEY" >> my_settings.py
-          cat my_settings.py
+          touch .env
+          echo SECRET_KEY="$SECRET_KEY" >> .env
+          cat .env
+          pwd
       - name: Test
         run: docker-compose run --rm app sh -c "python manage.py test"
       - name: Lint
