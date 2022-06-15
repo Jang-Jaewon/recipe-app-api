@@ -379,3 +379,4 @@ zsdoc/data
 # secrets.json
 /app/secrets.json
 /app/.env
+/app/my_settings.py
