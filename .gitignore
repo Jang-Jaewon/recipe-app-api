@@ -375,6 +375,3 @@ zsdoc/data
 /.idea/inspectionProfiles/profiles_settings.xml
 /.idea/recipe-app-api.iml
 /.idea/vcs.xml
-
-# secrets.json
-/app/.env
