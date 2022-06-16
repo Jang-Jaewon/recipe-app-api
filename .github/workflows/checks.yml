@@ -16,6 +16,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Create env file
+        run: |
+          touch .env
+          echo "${{ secrets.SECRET_KEY }}" >> .env
       - name: Test
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
