@@ -20,8 +20,8 @@ RUN python -m venv /py && \
     if [ $DEV = "true" ]; \
       then /py/bin/pip install -r /tmp/requirements.dev.txt ; \
     fi && \
-    apk del .tmp-deps && \
     rm -rf /tmp && \
+    apk del .tmp-deps && \
     adduser \
         --disabled-password \
         --no-create-home \
