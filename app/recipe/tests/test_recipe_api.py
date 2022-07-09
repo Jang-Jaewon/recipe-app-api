@@ -14,7 +14,7 @@ from core.models import Recipe
 
 from recipe.serializers import (
     RecipeSerializer,
-    RecipeDetailserializer,
+    RecipeDetailSerializer,
 )
 
 
@@ -102,4 +102,3 @@ class PrivateRecipeAPITests(TestCase):
         serializer = RecipeDetailserializer(recipe)
         self.assertEqual(res.data, serializer.data)
         self.assertEqual(res.status_code, status.HTTP_200_OK)
-        
