@@ -65,3 +65,4 @@ class PrivateTagApiTests(TestCase):
         self.assertEqual(len(res.data), 1)
         self.assertEqual(res.data[0]["name"], tag.name)
         self.assertEqual(res.data[0]["id"], tag.id)
+        
