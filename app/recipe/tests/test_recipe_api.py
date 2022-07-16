@@ -270,7 +270,7 @@ class PrivateRecipeAPITests(TestCase):
         self.assertIn(tag_lunch, recipe.tags.all())
         self.assertNotIn(tag_breakfast, recipe.tags.all())
 
-    def test_Clear_recipe_tags(self):
+    def test_clear_recipe_tags(self):
         """Test clearing a recipes tags."""
         tag = Tag.objects.create(user=self.user, name="Dessert")
         recipe = create_recipe(user=self.user)
@@ -282,3 +282,4 @@ class PrivateRecipeAPITests(TestCase):
 
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(recipe.tags.all(), 0)
+        
